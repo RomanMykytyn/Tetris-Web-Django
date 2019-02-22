@@ -1,3 +1,27 @@
+.greeting {
+  font-size: 24px;
+  font-weight: bold;
+  color: #8e6362;
+}
+
+.sign_in {
+  display: none;
+  border: 3px solid gray;
+  background-color: lightgray;
+  width: 200px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+  margin: auto;
+  position: absolute;
+  left: 42%;
+  z-index: 1;
+}
+
+span {
+  color: blue;
+  cursor: pointer;
+}
+
 .tetris {
   border: 5px ridge #8e6362;
   border-radius: 15px;
