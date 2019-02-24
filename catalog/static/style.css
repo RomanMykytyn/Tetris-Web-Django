@@ -4,7 +4,7 @@
   color: #8e6362;
 }
 
-.sign_in {
+.sign_in, .sign_up {
   display: none;
   border: 3px solid gray;
   background-color: lightgray;
@@ -13,7 +13,7 @@
   padding-bottom: 5px;
   margin: auto;
   position: absolute;
-  left: 42%;
+  left: calc(50% - 100px);
   z-index: 1;
 }
 
