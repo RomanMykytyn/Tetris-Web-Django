@@ -7,15 +7,20 @@
     <script src="static/jQuery.js"></script>
   </head>
   <body>
+
     <div class="greeting">
+      {% if wrongLogin != '' %}
+        {{wrongLogin}}<br>
+      {% endif %}
+
       {% if user.is_authenticated %}
-        Hello, {{ user.get_username }}.
+        Hello, {{ user.get_username }}. <span id="exitAcc">Exit</span> your account.
       {% else %}
         Hi, an unknown player. <span id="sign_in">Sign in</span> or <span id="sign_up">sign up.</span>
       {% endif %}
     </div>
     <div class="sign_in">
-      <form action="/signIn/" method="post">
+      <form action="/signIn/" method="post" autocomplete="off">
         {% csrf_token %}
         <h1>Sign in</h1>
         <label for="login_field">Login</label>
@@ -27,7 +32,8 @@
       </form>
     </div>
     <div class="sign_up">
-      <form action="" method="post">
+      <form action="/" method="post" autocomplete="off">
+        {% csrf_token %}
         <h1>Sign up</h1>
         <label for="login_field2">Login</label>
         <input type="text" name="login" id="login_field2"><br><br>

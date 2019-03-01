@@ -18,3 +18,7 @@ $( "#sign_up" ).click(function() {
   signUpForm.style.display = "block";
   signInForm.style.display = "none";
 });
+
+$( "#exitAcc" ).click(function() {
+  $.post("/exitAcc/", function(data) {location.reload()}
+)});
