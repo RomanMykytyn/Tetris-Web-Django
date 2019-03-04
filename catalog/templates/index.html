@@ -20,7 +20,7 @@
       {% endif %}
     </div>
     <div class="sign_in">
-      <form action="/signIn/" method="post" autocomplete="off">
+      <form action="/signIn/" method="post">
         {% csrf_token %}
         <h1>Sign in</h1>
         <label for="login_field">Login</label>
@@ -32,7 +32,7 @@
       </form>
     </div>
     <div class="sign_up">
-      <form action="/" method="post" autocomplete="off">
+      <form action="/" method="post">
         {% csrf_token %}
         <h1>Sign up</h1>
         <label for="login_field2">Login</label>

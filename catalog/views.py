@@ -12,7 +12,7 @@ def index(request):
         userSignUp = authenticate(username=request.POST['login'], password=request.POST['password'])
         if userSignUp is not None:
             login(request, userSignUp)
-            return render(request, 'index.html', context={'wrongLogin':''},)
+            return redirect("/", { 'wrongLogin':'' })
         else:
             return render(request, 'index.html', context={'wrongLogin':'Login or password is incorrect.'},)
     if request.method == 'GET':
