@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 
 # Create your views here.
-@csrf_exempt
+
 def index(request):
     if request.method == 'POST':
         userSignUp = authenticate(username=request.POST['login'], password=request.POST['password'])
@@ -25,7 +25,7 @@ def signIn(request):
     login(request, userSignIn)
     return redirect('/')
 
-@csrf_exempt
+
 def exitAcc(request):
     logout(request)
     return HttpResponse()

@@ -44,12 +44,37 @@
       </form>
     </div>
     <div class="title"><b>TETRIS</b></div>
-    <div class="tetris">
-      <div class="score">SCORE: 0</div>
-      <canvas id="tetrisField" width="200" height="400"></canvas>
-      <div class="message">For start game press "Space".</div>
-      <div class="text">Next Shape</div>
-      <canvas id="nextShape" width="80" height="80"></canvas>
+    <div class="main">
+      <div class="youScore">
+        <h2>Your 10 last games.</h2>
+        <hr size='3px' color='#894240' width='180px'>
+      </div>
+      <div class="bestScore">
+        <h2>Best players.</h2>
+        <hr size='3px' color='#894240' width='180px'>
+      </div>
+      <div class="tetris">
+        <div class="score">SCORE: 0</div>
+        <canvas id="tetrisField" width="200" height="400"></canvas>
+        <div class="message">For start game press "Space".</div>
+        <div class="text">Next Shape</div>
+        <canvas id="nextShape" width="80" height="80"></canvas>
+      </div>
+      <div class="comments">
+        <h2>Comments.</h2>
+        <hr size='3px' color='#894240' width='390px'>
+        <div class="viewComments"></div>
+        <div class="addComment" style="
+        {% if user.is_authenticated %}
+          display: block;
+        {% else %}
+          display: none;
+        {% endif %}">
+          <hr size='3px' color='#894240' width='390px'>
+          <textarea name="textComment" rows="3" cols="44"></textarea>
+          <button>Send.</button>
+        </div>
+      </div>
     </div>
     <script src="static/script.js"></script>
     <script src="static/script_serv.js"></script>

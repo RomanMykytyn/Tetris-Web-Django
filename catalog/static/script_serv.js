@@ -20,5 +20,5 @@ $( "#sign_up" ).click(function() {
 });
 
 $( "#exitAcc" ).click(function() {
-  $.post("/exitAcc/", function(data) {location.reload()}
+  $.get("/exitAcc/", function(data) {location.reload()}
 )});

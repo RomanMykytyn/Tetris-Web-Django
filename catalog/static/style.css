@@ -88,3 +88,61 @@ span {
   font-weight: bold;
   vertical-align: middle;
 }
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.youScore {
+  border: 5px ridge #8e6362;
+  border-radius: 15px;
+  width: 200px;
+  margin: 0 10px;
+}
+
+.bestScore {
+  border: 5px ridge #8e6362;
+  border-radius: 15px;
+  width: 200px;
+  margin: 0 0 0 10px;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  border: 5px ridge #8e6362;
+  border-radius: 15px;
+  width: 410px;
+  height: 450px;
+  margin: 0 10px 0 0;
+  overflow:
+}
+
+h2 {
+  color: #B14802;
+  text-align: center;
+}
+
+button {
+  height: 50px;
+  vertical-align: bottom;
+  margin: 5px;
+  font-size: 15px;
+}
+
+textarea {
+  margin-left: 3px;
+  border: 2px solid gray;
+}
+
+.addComment {
+  display: block;
+}
+
+.viewComments {
+  min-height: 280px;
+  height: auto;
+  overflow: auto;
+}
