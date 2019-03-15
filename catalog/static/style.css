@@ -146,3 +146,15 @@ textarea {
   height: auto;
   overflow: auto;
 }
+
+.comment {
+  display: block;
+  float: left;
+  clear: both;
+  background-color: #ffe5a8;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 4px;
+  max-width: 375px;
+  word-wrap: break-word;
+}

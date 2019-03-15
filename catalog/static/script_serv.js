@@ -22,3 +22,14 @@ $( "#sign_up" ).click(function() {
 $( "#exitAcc" ).click(function() {
   $.get("/exitAcc/", function(data) {location.reload()}
 )});
+
+$( "#sendComment" ).click(function() {
+  var text = $('#textComment').val();
+  if (text) {
+    $.get("/ajaxView/", {text: text},  function() {updateComments();} );
+    $('#textComment').val('');
+  }});
+
+function updateComments() {
+  $.get("/ajaxView/", {update: "ok"},  function(data) {$(".viewComments").html(data);} )
+}
