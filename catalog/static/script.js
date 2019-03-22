@@ -122,6 +122,7 @@ function ifGameOver() {
             clearTimeout(timerID);
             statusGame = undefined;
             fillField = [];
+            $.get("/ajaxView/", {score: score},  function() { updatePlayers(); } )
             break loop;
           }
   }}}}
@@ -280,4 +281,8 @@ function rotate() {
   shape = listShape[shapeRotate[0]].blocks[shapeRotate[1]];
   shapePosX = tempShapePosX;
   drawFrame();
+}
+
+function updatePlayers() {
+  $.get("/ajaxView/", {updatePlayers: "ok"},  function(data) {$(".bestScore").append(data);} )
 }

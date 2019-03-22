@@ -151,10 +151,16 @@ textarea {
   display: block;
   float: left;
   clear: both;
-  background-color: #ffe5a8;
+  background-color: #ffb76b;
   border-radius: 5px;
   margin: 5px;
   padding: 4px;
   max-width: 375px;
   word-wrap: break-word;
+}
+
+ol {
+  font-size: 20px;
+  color: #8e6362;
+  font-weight: bold;
 }

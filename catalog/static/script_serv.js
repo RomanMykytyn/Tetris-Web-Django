@@ -1,6 +1,9 @@
 var signInForm = document.querySelector('.sign_in');
 var signUpForm = document.querySelector('.sign_up');
 
+updateComments();
+updatePlayers();
+
 $( "#closeButton" ).click(function() {
   signInForm.style.display = "none";
 });
@@ -31,5 +34,9 @@ $( "#sendComment" ).click(function() {
   }});
 
 function updateComments() {
-  $.get("/ajaxView/", {update: "ok"},  function(data) {$(".viewComments").html(data);} )
+  $.get("/ajaxView/", {updateComments: "ok"},  function(data) {$(".viewComments").html(data);} )
+}
+
+function updatePlayers() {
+  $.get("/ajaxView/", {updatePlayers: "ok"},  function(data) {$(".bestScore").append(data);} )
 }
