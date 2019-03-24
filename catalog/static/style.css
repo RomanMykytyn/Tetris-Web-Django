@@ -92,7 +92,7 @@ span {
 .main {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .youScore {
@@ -117,7 +117,7 @@ span {
   width: 410px;
   height: 450px;
   margin: 0 10px 0 0;
-  overflow:
+  
 }
 
 h2 {

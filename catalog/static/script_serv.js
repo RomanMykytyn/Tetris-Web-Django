@@ -38,5 +38,5 @@ function updateComments() {
 }
 
 function updatePlayers() {
-  $.get("/ajaxView/", {updatePlayers: "ok"},  function(data) {$(".bestScore").append(data);} )
+  $.get("/ajaxView/", {updatePlayers: "ok"},  function(data) {$(".bestScore").html(data);} )
 }
