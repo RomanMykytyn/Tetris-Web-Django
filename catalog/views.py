@@ -55,6 +55,17 @@ def ajaxView(request):
         best_players = []
         to_page = ""
         for i in all_players:
+            best_players.append([i.userName, i.totalScore])
+        best_players = sorted(best_players, key = lambda x: x[1], reverse = True)
+        best_players[0:9]
+        for n in best_players:
+            to_page += "<li>" + n[0] +" - " + str(n[1]) + "</li>"
+        to_page = "<ol id='scoreList'>" + to_page + "</ol>"
+        return HttpResponse(to_page)
+        '''all_players = userScore.objects.all()
+        best_players = []
+        to_page = ""
+        for i in all_players:
             temp = i.score.split()
             for j, item in enumerate(temp):
                 temp[j] = int(item)
@@ -65,13 +76,16 @@ def ajaxView(request):
         for n in best_players:
             to_page += "<li>" + n[0] +" - " + str(n[1]) + "</li>"
         to_page = "<ol>" + to_page + "</ol>"
-        return HttpResponse(to_page)
+        return HttpResponse(to_page)'''
     if "score" in request.GET:
         if request.user.is_authenticated == True:
             newUser = userScore.objects.get(userName = request.user.username)
             newUserScore = newUser.score.split()
             newUserScore.insert(0, request.GET['score'])
+            if len(newUserScore) > 10:
+                newUserScore[0:9]
             newUser.score = " ".join(newUserScore)
+            newUser.totalScore += int(request.GET['score'])
             newUser.save()
         return HttpResponse()
 

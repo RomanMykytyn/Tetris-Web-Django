@@ -284,5 +284,6 @@ function rotate() {
 }
 
 function updatePlayers() {
-  $.get("/ajaxView/", {updatePlayers: "ok"},  function(data) {$(".bestScore").append(data);} )
+  $.get("/ajaxView/", {updatePlayers: "ok"},  function(data) {$("#scoreList").remove();
+  $(".bestScore").append(data);} )
 }
