@@ -62,6 +62,16 @@ def ajaxView(request):
             to_page += "<li>" + n[0] +" - " + str(n[1]) + "</li>"
         to_page = "<ol id='scoreList'>" + to_page + "</ol>"
         return HttpResponse(to_page)
+    if "updateYourGames" in request.GET:
+        if request.user.is_authenticated == True:
+            to_page = ""
+            newUser = userScore.objects.get(userName = request.user.username)
+            newUserScore = newUser.score.split()
+            for n, item in enumerate(newUserScore):
+                to_page += "<li>" + "Game №" + str(n+1) + " - " + item + "</li>"
+            to_page = "<ol id='yourGameList'>" + to_page + "</ol>"
+            return HttpResponse(to_page)
+
         '''all_players = userScore.objects.all()
         best_players = []
         to_page = ""
@@ -83,8 +93,8 @@ def ajaxView(request):
             newUserScore = newUser.score.split()
             newUserScore.insert(0, request.GET['score'])
             if len(newUserScore) > 10:
-                newUserScore[0:9]
-            newUser.score = " ".join(newUserScore)
+                newUserScore[:10]
+            newUser.score = " ".join(newUserScore[:10])
             newUser.totalScore += int(request.GET['score'])
             newUser.save()
         return HttpResponse()

@@ -3,6 +3,7 @@ var signUpForm = document.querySelector('.sign_up');
 
 updateComments();
 updatePlayers();
+updateYourGames();
 
 $( "#closeButton" ).click(function() {
   signInForm.style.display = "none";
@@ -40,4 +41,9 @@ function updateComments() {
 function updatePlayers() {
   $.get("/ajaxView/", {updatePlayers: "ok"},  function(data) {$("#scoreList").remove();
   $(".bestScore").append(data);} )
+}
+
+function updateYourGames() {
+  $.get("/ajaxView/", {updateYourGames: "ok"},  function(data) {$("#yourGameList").remove();
+  $(".youScore").append(data);} )
 }

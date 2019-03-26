@@ -122,7 +122,7 @@ function ifGameOver() {
             clearTimeout(timerID);
             statusGame = undefined;
             fillField = [];
-            $.get("/ajaxView/", {score: score},  function() { updatePlayers(); } )
+            $.get("/ajaxView/", {score: score},  function() { updatePlayers(); updateYourGames(); } )
             break loop;
           }
   }}}}
@@ -286,4 +286,9 @@ function rotate() {
 function updatePlayers() {
   $.get("/ajaxView/", {updatePlayers: "ok"},  function(data) {$("#scoreList").remove();
   $(".bestScore").append(data);} )
+}
+
+function updateYourGames() {
+  $.get("/ajaxView/", {updateYourGames: "ok"},  function(data) {$("#yourGameList").remove();
+  $(".youScore").append(data);} )
 }
