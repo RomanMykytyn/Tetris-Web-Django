@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'z&9ej*itp(_!+np95oz_i2c^+^9$zi
 DEBUG = True
 DEBUG = bool( os.environ.get('DJANGO_DEBUG', True) )
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tetris-by-roman.herokuapp.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
